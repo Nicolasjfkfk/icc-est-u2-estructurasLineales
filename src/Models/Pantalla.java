@@ -5,6 +5,8 @@ public class Pantalla {
     private String nombre;
     private String ruta;
 
+
+
     // Constructor con parámetros
     public Pantalla(int id, String nombre, String ruta) {
         this.id = id;

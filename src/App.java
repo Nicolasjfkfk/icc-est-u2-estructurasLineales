@@ -1,3 +1,6 @@
+
+import Materia.Queues.Queue;
+import Materia.Queues.QueueGeneric;
 import Materia.Queues.Stacks.Stack;
 import Materia.Queues.Stacks.StackGeneric;
 import Models.Pantalla;
@@ -5,7 +8,10 @@ import Models.Pantalla;
 public class App {
     public static void main(String[] args) {
        // runStack();
-        runStackGeneric();
+        //runStackGeneric();
+       // runQueue();
+        runQueueGeneric();
+
     }
 
     public static void runStack() {
@@ -42,5 +48,46 @@ public class App {
         System.out.println("Estoy en: " + router.peek().getRuta());
         router.printStack();
     }
+
+    public static void runQueue(){
+            Queue cola = new Queue();
+            cola.enqueue(10);
+            cola.enqueue(20);
+            cola.enqueue(30);
+
+            System.out.println(cola.peek());
+            System.out.println(cola.dequeue());
+            System.out.println(cola.dequeue());
+            System.out.println(cola.peek());
+
+        }
+
+
+        public static void runQueueGeneric() {
+    QueueGeneric<Pantalla> routerQueue = new QueueGeneric<>();
+
+    // Agregar elementos a la cola
+    routerQueue.enqueue(new Pantalla(1, "Home Page", "/Home"));
+    routerQueue.enqueue(new Pantalla(2, "Menu Page", "/Home/menu"));
+    routerQueue.enqueue(new Pantalla(3, "Users Page", "/Home/menu/users"));
+
+    // Imprimir la cola
+    System.out.println("Estado inicial de la cola:");
+    routerQueue.printQueue();
+
+    // Operaciones con la cola
+    System.out.println("\nElemento al frente: " + routerQueue.peek().getRuta());
+    System.out.println("Desencolar: " + routerQueue.dequeue().getRuta());
+    System.out.println("Elemento al frente tras desencolar: " + routerQueue.peek().getRuta());
+
+    // Agregar un nuevo elemento
+    routerQueue.enqueue(new Pantalla(4, "Settings Page", "/Home/menu/settings"));
+
+    // Imprimir la cola final
+    System.out.println("\nEstado final de la cola:");
+    routerQueue.printQueue();
+
+    System.out.println("\nTamaño de la cola: " + routerQueue.size());
 }
 
+}
