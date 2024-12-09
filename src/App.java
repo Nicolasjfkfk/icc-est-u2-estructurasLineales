@@ -1,4 +1,5 @@
 
+import Controller.MenuController;
 import Materia.Queues.Queue;
 import Materia.Queues.QueueGeneric;
 import Materia.Queues.Stacks.Stack;
@@ -7,11 +8,16 @@ import Models.Pantalla;
 
 public class App {
     public static void main(String[] args) {
+        runContactManager();
        // runStack();
         //runStackGeneric();
        // runQueue();
-        runQueueGeneric();
+       // runQueueGeneric();
 
+    }
+    public static void runContactManager(){
+        MenuController menuController = new MenuController();
+        menuController.showMenu();
     }
 
     public static void runStack() {
@@ -64,30 +70,31 @@ public class App {
 
 
         public static void runQueueGeneric() {
-    QueueGeneric<Pantalla> routerQueue = new QueueGeneric<>();
+            QueueGeneric<Pantalla> routerQueue = new QueueGeneric<>();
 
-    // Agregar elementos a la cola
-    routerQueue.enqueue(new Pantalla(1, "Home Page", "/Home"));
-    routerQueue.enqueue(new Pantalla(2, "Menu Page", "/Home/menu"));
-    routerQueue.enqueue(new Pantalla(3, "Users Page", "/Home/menu/users"));
 
-    // Imprimir la cola
-    System.out.println("Estado inicial de la cola:");
-    routerQueue.printQueue();
+            // Agregar elementos a la cola
+            routerQueue.enqueue(new Pantalla(1, "Home Page", "/Home"));
+            routerQueue.enqueue(new Pantalla(2, "Menu Page", "/Home/menu"));
+            routerQueue.enqueue(new Pantalla(3, "Users Page", "/Home/menu/users"));
 
-    // Operaciones con la cola
-    System.out.println("\nElemento al frente: " + routerQueue.peek().getRuta());
-    System.out.println("Desencolar: " + routerQueue.dequeue().getRuta());
-    System.out.println("Elemento al frente tras desencolar: " + routerQueue.peek().getRuta());
+            // Imprimir la cola
+            System.out.println("Estado inicial de la cola:");
+            routerQueue.printQueue();
 
-    // Agregar un nuevo elemento
-    routerQueue.enqueue(new Pantalla(4, "Settings Page", "/Home/menu/settings"));
+            // Operaciones con la cola
+            System.out.println("\nElemento al frente: " + routerQueue.peek().getRuta());
+            System.out.println("Desencolar: " + routerQueue.dequeue().getRuta());
+            System.out.println("Elemento al frente tras desencolar: " + routerQueue.peek().getRuta());
 
-    // Imprimir la cola final
-    System.out.println("\nEstado final de la cola:");
-    routerQueue.printQueue();
+            // Agregar un nuevo elemento
+            routerQueue.enqueue(new Pantalla(4, "Settings Page", "/Home/menu/settings"));
 
-    System.out.println("\nTamaño de la cola: " + routerQueue.size());
-}
+            // Imprimir la cola final
+            System.out.println("\nEstado final de la cola:");
+            routerQueue.printQueue(); 
+            System.out.println("\nTamaño de la cola: " + routerQueue.size());
+        }
+
 
 }
