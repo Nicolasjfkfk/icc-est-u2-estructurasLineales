@@ -50,16 +50,27 @@ public class MenuController {
     }
 
     private void findContact() {
+        String name  = consoleView.getInput("Enter a name to search: ");
+        Contact<?, ?> contact = contactManager.findContactByName(name);
+        if (contact != null){
+            consoleView.showMessage(("CONTAC FUND"+ contact));
+            
+        }else {
+            consoleView.showMessage("Contact not found.");
+        }
         
     }
 
     private void deleteContact() {
+        String name = consoleView.getInput("ENTER A NAME TO DELETE: ");
+        contactManager.deleteContactByName(name);
+        consoleView.showMessage("CONTACT NO FUND ");
         
     }
 
     private void printList() {
         consoleView.showMessage("Printing all contacts:");
-        contactManager.printList(); // Llama al método printList de ContactManager
+        contactManager.printList(); 
     }
     
 }
