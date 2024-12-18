@@ -1,18 +1,63 @@
-## Getting Started
+# Ejercicios de Pilas y Colas
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Descripción del Proyecto
+Este proyecto implementa soluciones para dos ejercicios prácticos relacionados con estructuras de datos lineales (**pilas**). Los ejercicios son:
 
-## Folder Structure
+1. **Validación de Signos**  
+2. **Ordenamiento de un Stack**
 
-The workspace contains two folders by default, where:
+Cada solución está estructurada en clases Java y organizadas en paquetes.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+---
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Ejercicio 1: Validación de Signos
+**Paquete:** `Ejercicio_01_sign`  
+**Clase Principal:** `SignValidator`  
+### Descripción
+Este ejercicio implementa un algoritmo que verifica si un string compuesto por los caracteres `(`, `)`, `{`, `}`, `[` y `]` es válido.  
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Un string es válido si:
+- Cada corchete abierto tiene un correspondiente corchete de cierre.
+- Los corchetes se cierran en el orden correcto.
 
-## Dependency Management
+### Ejemplos
+```plaintext
+Input: "([]){}"  
+Output: true  
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Input: "({)}"  
+Output: false  
+
+Input: "[{()"  
+Output: false  
+
+Input: "()"  
+Output: true  
+```
+
+---
+
+## Ejercicio 2: Ordenar un Stack
+**Paquete:** `Ejercicio_02_sorting`  
+**Clase Principal:** `StackSorter`  
+### Descripción
+Este ejercicio implementa un algoritmo para ordenar un stack de números enteros de forma que el elemento más pequeño quede en el tope del stack.  
+
+### Ejemplo
+```plaintext
+Input (Stack Original): (tope) 5->1->4->2  
+Output (Stack Ordenado): (tope) 1->2->4->5  
+```
+
+
+
+## Conclusiones
+1. **Aplicación práctica:**  
+   Estos ejercicios refuerzan conceptos teóricos de pilas y su uso para resolver problemas prácticos.
+
+2. **Desarrollo de habilidades:**  
+   Ayudan a mejorar la lógica de programación, el uso eficiente de estructuras de datos y la depuración de código.
+
+---
+
+
