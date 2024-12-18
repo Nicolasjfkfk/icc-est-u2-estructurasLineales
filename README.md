@@ -51,12 +51,8 @@ Output (Stack Ordenado): (tope) 1->2->4->5
 
 
 
-## Conclusiones
-1. **Aplicación práctica:**  
-   Estos ejercicios refuerzan conceptos teóricos de pilas y su uso para resolver problemas prácticos.
-
-2. **Desarrollo de habilidades:**  
-   Ayudan a mejorar la lógica de programación, el uso eficiente de estructuras de datos y la depuración de código.
+## Conclusion
+Los ejercicios abordan problemas fundamentales en el uso de pilas, como la validación de estructuras anidadas y el manejo eficiente de datos para tareas como el ordenamiento. Esto resalta la versatilidad de las pilas en diversos escenarios de programación.
 
 ---
 
